@@ -6,11 +6,13 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/07/31 18:33:02 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf/ft_printf.h"
+#include <fcntl.h>
+#include "get_next_line/get_next_line.h"
 
 typedef struct		s_graph
 {

@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/24 19:58:21 by hlarson           #+#    #+#             */
-/*   Updated: 2019/02/18 19:05:49 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/07/31 18:12:52 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static t_list		*get_file(t_list **file, int fd)
 {

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/24 19:58:28 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:25:18 by hlarson          ###   ########.fr       */
+/*   Created: 2019/07/31 18:13:06 by hlarson           #+#    #+#             */
+/*   Updated: 2019/07/31 18:36:26 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft/libft.h"
-# define BUFF_SIZE 4000
+#include "lem_in.h"
 
-int				get_next_line(const int fd, char **line);
+int		main(int argc, char **argv)
+{
+	int		k;
+	char	*c;
+	char	*line = NULL;
 
-#endif
+	if (argc == 1)
+		return (ft_printf("\n"));
+	k = open(argv[1], O_RDONLY);
+	c = ft_strdup("");
+	while (get_next_line(k, &line) > 0)
+		c = ft_strjoin(c, line);
+	ft_printf("%s\n", c);
+	return (0);
+}
