@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/11/28 18:29:34 by hlarson           #+#    #+#             */
+/*   Updated: 2018/11/30 17:59:36 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <string.h>
 
-typedef struct		s_graph
+void	*ft_memset(void *s, int c, size_t n)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t				i;
+	unsigned char		*b;
+
+	b = (unsigned char *)s;
+	i = 0;
+	while (i != n)
+	{
+		b[i] = c;
+		i++;
+	}
+	return (b);
+}

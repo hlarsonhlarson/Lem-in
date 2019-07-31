@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/12/04 19:11:12 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/16 16:40:44 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
+#include <string.h>
 
-typedef struct		s_graph
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t	i;
+
+	if (s)
+	{
+		i = 0;
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+		write(fd, "\n", 1);
+	}
+}

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   strcat.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/11/30 19:58:03 by hlarson           #+#    #+#             */
+/*   Updated: 2018/11/30 20:13:15 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <string.h>
 
-typedef struct		s_graph
+char	*ft_strcat(char *dest, const char *src)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t		i;
+	size_t		j;
+
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

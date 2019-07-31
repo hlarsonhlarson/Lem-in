@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/12/01 22:11:40 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/12 18:56:33 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdlib.h>
+#include "libft.h"
 
-typedef struct		s_graph
+char	*ft_strnew(size_t size)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	char	*str;
+
+	str = (char *)malloc(size + 1);
+	if (str)
+		ft_bzero(str, size + 1);
+	else
+		return (NULL);
+	return (str);
+}

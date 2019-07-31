@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/11/30 19:16:04 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/05 20:35:09 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <string.h>
 
-typedef struct		s_graph
+size_t		ft_strlen(const char *s)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}

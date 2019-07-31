@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/12/03 18:52:39 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/12 19:16:23 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdlib.h>
+#include "libft.h"
 
-typedef struct		s_graph
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	char	*c;
+	size_t	i;
+
+	i = 0;
+	if ((s) && (f))
+	{
+		c = ft_strnew(ft_strlen(s));
+		if (c)
+		{
+			while (s[i])
+			{
+				c[i] = f(s[i]);
+				i++;
+			}
+			return (c);
+		}
+	}
+	return (NULL);
+}

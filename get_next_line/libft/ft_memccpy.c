@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/11/28 20:52:05 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/06 17:41:32 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <string.h>
 
-typedef struct		s_graph
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t				i;
+	unsigned char		*d;
+	unsigned char		*s;
+	unsigned char		l;
+
+	i = 0;
+	l = (unsigned)c;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	while (i != n)
+	{
+		d[i] = s[i];
+		if (s[i] == l)
+			return (d + i + 1);
+		i++;
+	}
+	return (NULL);
+}

@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/11/30 21:10:56 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/06 20:53:40 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <string.h>
 
-typedef struct		s_graph
+char	*ft_strrchr(const char *s, int c)
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t	i;
+	long	k;
+
+	i = 0;
+	k = -1;
+	while (s[i])
+	{
+		if (s[i] == c)
+			k = i;
+		i++;
+	}
+	if (s[i] == c)
+		k = i;
+	if (k == -1)
+		return (NULL);
+	return ((char *)(s + k));
+}

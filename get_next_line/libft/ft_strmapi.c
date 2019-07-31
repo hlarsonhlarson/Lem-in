@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/07/31 18:07:19 by hlarson          ###   ########.fr       */
+/*   Created: 2018/12/03 18:57:11 by hlarson           #+#    #+#             */
+/*   Updated: 2018/12/12 19:19:38 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdlib.h>
+#include "libft.h"
 
-typedef struct		s_graph
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*name;
-	struct s_graph	*connect;
-	//maybe better make this in additional array
-	int				available;
-}					t_graph;
+	size_t	i;
+	char	*c;
+
+	i = 0;
+	if ((s) && (f))
+	{
+		c = ft_strnew(ft_strlen(s));
+		if (c)
+		{
+			while (s[i])
+			{
+				c[i] = f(i, s[i]);
+				i++;
+			}
+			return (c);
+		}
+	}
+	return (NULL);
+}
