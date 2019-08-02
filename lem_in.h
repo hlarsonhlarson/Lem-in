@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 15:35:23 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 17:02:38 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct		s_graph
 	struct s_graph	*adjacency;
 	bool			start;
 	bool			end;
+	int				x;
+	int				y;
 }					t_graph;
 
 typedef struct		s_help
