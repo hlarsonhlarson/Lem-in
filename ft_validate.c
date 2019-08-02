@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:01:50 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 19:02:34 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 19:08:25 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_line_pars_one(char *line, t_help *help)
 	if (line[0] == '#')
 		return (ft_check_comment(line, tmp, help));
 	else
-		return (ft_check_format(line, help, tmp));
+		return (ft_check_format_one(help, line, tmp));
 }
 
 int		ft_validate(t_graph ***graph, char **argv)
