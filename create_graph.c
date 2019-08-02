@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:21:12 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 17:06:04 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 18:52:39 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static void		copy_data_from_help(t_graph *graph, t_help *tmp)
 		(graph)->end = tmp->end;
 		(graph)->x = tmp->x;
 		(graph)->y = tmp->y;
-		(graph)->adjacment = NULL;
+		(graph)->adjacency = NULL;
 }
 
-t_graph		**create_graph(t_help *help)
+t_graph		**create_graph(t_help *help, int n)
 {
 	t_graph		**graph;
 	t_help		*tmp;
@@ -56,5 +56,6 @@ t_graph		**create_graph(t_help *help)
 		free(tmp);
 		tmp = swap;
 	}
+	(graph[0])->ant_number = n;
 	return (graph);
 }

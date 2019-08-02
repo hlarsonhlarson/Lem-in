@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:01:50 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 17:02:38 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 19:02:34 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int		get_ant_num(char *line)
 
 	i = 0;
 	n = ft_atoi(line);
-	if (line[i] = '-')
+	if (line[i] == '-')
 		i++;
 	if (line[i] < '0' || line[i] > '9')
 		return (-1);
 	while (line[i] >= '0' && line[i] <= '9')
 		i++;
-	if (count_numbers(n) != i || line[i] != '\0')
+	if (count_num(n) != i || line[i] != '\0')
 	{
 		ft_strdel(&line);
 		return (-1);
@@ -52,7 +52,6 @@ int		ft_line_pars_one(char *line, t_help *help)
 int		ft_validate(t_graph ***graph, char **argv)
 {
 	int		k;
-	char	*c;
 	char	*line;
 	t_help	*help;
 	int		n;
@@ -62,6 +61,8 @@ int		ft_validate(t_graph ***graph, char **argv)
 	line = NULL;
 	if (get_next_line(k , &line) > 0)
 		n = get_ant_num(line);
+	else
+		return (-1);
 	if (n < 0)
 		return (-1);
 	while (get_next_line(k, &line) > 0)
@@ -70,4 +71,5 @@ int		ft_validate(t_graph ***graph, char **argv)
 			break ;
 	}
 	*graph = create_graph(help ,n);
+	return (0);
 }

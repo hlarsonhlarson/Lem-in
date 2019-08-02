@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 15:33:11 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 16:47:32 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 19:01:41 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ static int		ft_help_atoi(int x, char *line)
 	int		i;
 
 	i = 0;
-	if (line[i] = '-')
+	if (line[i] == '-')
 		i++;
 	if (line[i] < '0' || line[i] > '9')
 		return (-1);
 	while (line[i] >= '0' && line[i] <= '9')
 		i++;
-	if (count_numbers(x) != i)
+	if (count_num(x) != i)
 		return (-1);
 	if (line[i] != ' ' && line[i] != '\0')
 		return (-1);
@@ -57,26 +57,25 @@ static int		ft_check_name(t_help *help, t_help *tmp)
 	return (0);
 }
 
-int		ft_check_format_one(t_help *help, char *line)
+int		ft_check_format_one(t_help *help, char *line, t_help *head)
 {
 	int		i;
-	int		j;
 
 	i = find_char(line, ' ');
 	if (line[i] == '\0')
 		return (-1);
 	help->name = ft_strdup(ft_strrchr(line, ' '));
-	if (ft_check_name == -1)
+	if (ft_check_name(help, head) == -1)
 		return (ft_exit_format(help));
 	help->x = ft_atoi(line + i + 1);
-	if (ft_help_atoi(x, line + i + 1) == -1)
+	if (ft_help_atoi(help->x, line + i + 1) == -1)
 		return (ft_exit_format(help));
 	i = find_char(line, ' ');
 	if (line[i] == '\0')
 		return (-1);
 	help->y = ft_atoi(line + i + 1);
-	if (ft_help_atoi(x, line + i + 1) == -1)
+	if (ft_help_atoi(help->x, line + i + 1) == -1)
 		return (ft_exit_format(help));
 	i = find_char(line, ' ');
-	return ((line[i] == '\0') ? 0 : ft_exit_format);
+	return ((line[i] == '\0') ? 0 : ft_exit_format(help));
 }

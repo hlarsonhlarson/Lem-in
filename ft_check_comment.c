@@ -6,20 +6,20 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 13:46:22 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 16:44:55 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 19:02:47 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int		check_star(t_help *tmp)
+int		check_start(t_help *tmp)
 {
 	t_help	*help_find;
 
 	help_find = tmp;
 	while (help_find)
 	{
-		if (tmp->start == 1 || tmp->end == 1)
+		if (help_find->start == 1 || help_find->end == 1)
 			return (-1);
 		help_find = help_find->next;
 	}
@@ -37,4 +37,5 @@ int		ft_check_comment(char *line, t_help *start, t_help *help)
 		if (ft_strcmp(line, "##end") == 0)	
 			help->end = 1;
 	}
+	return (0);
 }

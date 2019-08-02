@@ -1,6 +1,6 @@
 NAME = test
 
-SRCS = main.c get_next_line/get_next_line.c
+SRCS = main.c get_next_line/get_next_line.c ft_validate.c ft_check_comment.c ft_check_format_one.c create_graph.c
 
 all : $(NAME)
 
