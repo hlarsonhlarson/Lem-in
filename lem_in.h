@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 17:02:38 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 17:05:58 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ typedef struct		s_help
 
 int					ft_check_comment(char *line, t_help *start, t_help *help);
 int					ft_check_format(char *line, t_help *start, t_help *help);
+t_graph				**create_graph(t_help *help);
 
 #endif
