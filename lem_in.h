@@ -38,8 +38,8 @@ typedef struct		s_help
 	int				y;
 }					t_help;
 
-int					ft_check_comment(char *line, t_help *start, t_help **help);
-int					ft_check_format_one(t_help *help, char *line, t_help *head);
+int					ft_check_comment(char *line, t_help **help);
+int					ft_check_format_one(t_help **help, char *line);
 t_graph				**create_graph(t_help *help, int n);
 int					ft_validate(t_graph ***graph, char **argv);
 int					count_num(int k);

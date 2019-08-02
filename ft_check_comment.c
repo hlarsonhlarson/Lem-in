@@ -26,21 +26,16 @@ int		check_start(t_help *tmp)
 	return (0);
 }
 
-int		ft_check_comment(char *line, t_help *start, t_help **help)
+int		ft_check_comment(char *line, t_help **help)
 {
 	if (ft_strcmp(line, "##start") == 0 || ft_strcmp(line, "##end") == 0)
 	{
-		if (check_start(start) == -1)
+		if (check_start(*help) == -1)
 			return (-1);
 	}
     if (ft_strcmp(line, "##start") == 0)
         (*help)->start = 1;
     else if (ft_strcmp(line, "##end") == 0)
         (*help)->end = 1;
-    else
-    {
-       *help = NULL;
-        free(*help);
-    }
 	return (0);
 }

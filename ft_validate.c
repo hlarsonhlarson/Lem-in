@@ -36,17 +36,10 @@ int		get_ant_num(char *line)
 
 int		ft_line_pars_one(char *line, t_help **help)
 {
-	t_help	*tmp;
-
-	tmp = *help;
-	while (*help != NULL && (*help)->start != 1 && (*help)->end != 1)
-		*help = (*help)->next;
-	*help = (*help != NULL && ((*help)->start == 1 || (*help)->end == 1)) ? *help :
-		create_help();
 	if (line[0] == '#')
-		return (ft_check_comment(line, tmp, help));
+		return (ft_check_comment(line,  help));
 	else
-		return (ft_check_format_one(*help, line, tmp));
+		return (ft_check_format_one(*help, line));
 }
 
 int		ft_validate(t_graph ***graph, char **argv)
