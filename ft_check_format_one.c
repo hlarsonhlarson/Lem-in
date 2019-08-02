@@ -17,8 +17,9 @@ static int		find_char(char *line, char a)
 	int		i;
 
 	i = 0;
-	while (line[i] != a || line[i])
+	while (line[i] != a && line[i])
 		i++;
+	i++;
 	return (i);
 }
 
@@ -64,18 +65,18 @@ int		ft_check_format_one(t_help *help, char *line, t_help *head)
 	i = find_char(line, ' ');
 	if (line[i] == '\0')
 		return (-1);
-	help->name = ft_strdup(ft_strrchr(line, ' '));
+	help->name = ft_copy_name(line, i);
 	if (ft_check_name(help, head) == -1)
 		return (ft_exit_format(help));
-	help->x = ft_atoi(line + i + 1);
-	if (ft_help_atoi(help->x, line + i + 1) == -1)
+	help->x = ft_atoi(line + i);
+	if (ft_help_atoi(help->x, line + i) == -1)
 		return (ft_exit_format(help));
-	i = find_char(line, ' ');
+	i = i + find_char(line + i, ' ');
 	if (line[i] == '\0')
 		return (-1);
-	help->y = ft_atoi(line + i + 1);
-	if (ft_help_atoi(help->x, line + i + 1) == -1)
+	help->y = ft_atoi(line + i);
+	if (ft_help_atoi(help->y, line + i) == -1)
 		return (ft_exit_format(help));
-	i = find_char(line, ' ');
-	return ((line[i] == '\0') ? 0 : ft_exit_format(help));
+	i = i + find_char(line + i, ' ');
+	return ((line[i - 1] == '\0') ? 0 : ft_exit_format(help));
 }

@@ -26,7 +26,7 @@ static t_list		*get_file(t_list **file, int fd)
 			return (tmp);
 		tmp = tmp->next;
 	}
-	tmp = (t_list *)malloc(sizeof(*tmp));
+	tmp = (t_list *)malloc(sizeof(tmp));
 	tmp->content = ft_strnew(0);
 	tmp->content_size = fd;
 	ft_lstadd(file, tmp);
@@ -42,7 +42,7 @@ char				*rightft_strjoin(char *a, char *b)
 
 	d = a;
 	i = 0;
-	c = ft_strnew(ft_strlen(d) + ft_strlen(b));
+	c = ft_strnew((sizeof(char)) * (ft_strlen(d) + ft_strlen(b)));
 	if (!c)
 		return (NULL);
 	while (*d)

@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 19:07:29 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/02 19:44:13 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ typedef struct		s_help
 	int				y;
 }					t_help;
 
-int					ft_check_comment(char *line, t_help *start, t_help *help);
+int					ft_check_comment(char *line, t_help *start, t_help **help);
 int					ft_check_format_one(t_help *help, char *line, t_help *head);
 t_graph				**create_graph(t_help *help, int n);
 int					ft_validate(t_graph ***graph, char **argv);
 int					count_num(int k);
+t_help				*create_help(void);
+char				*ft_copy_name(char *line, int i);
 
 #endif
