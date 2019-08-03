@@ -49,7 +49,7 @@ static int		ft_exit_format(t_help *help)
 
 static int		ft_check_name(t_help *help, t_help *tmp)
 {
-	while (tmp != help)
+	while (tmp != help && tmp)
 	{
 		if (ft_strcmp(tmp->name, help->name) == 0)
 			return (-1);
@@ -58,18 +58,19 @@ static int		ft_check_name(t_help *help, t_help *tmp)
 	return (0);
 }
 
-int		ft_check_format_one(t_help **help, char *line)
+int		ft_check_format_one(t_help **help, char *line, int *start, int *end)
 {
 	int		i;
 	t_help  *tmp;
 
-	tmp = *help;
-	while (*help)
-	    *help = (*help)->next;
-    *help = create_help();
 	i = find_char(line, ' ');
 	if (line[i] == '\0')
 		return (-1);
+    tmp = *help;
+    while (*help)
+        *help = (*help)->next;
+    *help = create_help(start, end);
+    add_help(tmp, *help);
     (*help)->name = ft_copy_name(line, i);
 	if (ft_check_name(*help, tmp) == -1)
 		return (ft_exit_format(*help));
@@ -83,5 +84,6 @@ int		ft_check_format_one(t_help **help, char *line)
 	if (ft_help_atoi((*help)->y, line + i) == -1)
 		return (ft_exit_format(*help));
 	i = i + find_char(line + i, ' ');
+	*help = (tmp == NULL) ? *help : tmp;
 	return ((line[i - 1] == '\0') ? 0 : ft_exit_format(*help));
 }

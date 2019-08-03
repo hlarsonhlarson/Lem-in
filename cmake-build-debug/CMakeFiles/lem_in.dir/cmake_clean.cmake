@@ -98,6 +98,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/main.c.o"
   "CMakeFiles/lem_in.dir/create_help.c.o"
   "CMakeFiles/lem_in.dir/ft_copy_name.c.o"
+  "CMakeFiles/lem_in.dir/check_first_line.c.o"
   "lem_in.pdb"
   "lem_in"
 )

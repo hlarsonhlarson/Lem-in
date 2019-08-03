@@ -49,7 +49,7 @@ t_graph		**create_graph(t_help *help, int n)
 	graph = (t_graph **)malloc(sizeof(t_graph **) * count_elem(help));
 	while (tmp)
 	{
-		graph[i] = (t_graph *)malloc(sizeof(t_graph *));
+		graph[i] = (t_graph *)malloc(sizeof(t_graph));
 		swap = tmp->next;
 		copy_data_from_help(graph[i], tmp);
 		ft_strdel(&(tmp->name));

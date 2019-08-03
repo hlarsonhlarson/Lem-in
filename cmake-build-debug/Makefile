@@ -123,6 +123,33 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
+check_first_line.o: check_first_line.c.o
+
+.PHONY : check_first_line.o
+
+# target to build an object file
+check_first_line.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/check_first_line.c.o
+.PHONY : check_first_line.c.o
+
+check_first_line.i: check_first_line.c.i
+
+.PHONY : check_first_line.i
+
+# target to preprocess a source file
+check_first_line.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/check_first_line.c.i
+.PHONY : check_first_line.c.i
+
+check_first_line.s: check_first_line.c.s
+
+.PHONY : check_first_line.s
+
+# target to generate assembly for a file
+check_first_line.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/check_first_line.c.s
+.PHONY : check_first_line.c.s
+
 count_num.o: count_num.c.o
 
 .PHONY : count_num.o
@@ -2805,6 +2832,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lem_in"
+	@echo "... check_first_line.o"
+	@echo "... check_first_line.i"
+	@echo "... check_first_line.s"
 	@echo "... count_num.o"
 	@echo "... count_num.i"
 	@echo "... count_num.s"

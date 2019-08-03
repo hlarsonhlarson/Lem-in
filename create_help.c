@@ -12,7 +12,16 @@
 
 #include "lem_in.h"
 
-t_help	*create_help(void)
+void    add_help(t_help *tmp, t_help *help)
+{
+    if (tmp == NULL)
+        return ;
+    while (tmp->next)
+        tmp = tmp->next;
+    tmp->next = help;
+}
+
+t_help	*create_help(int *start, int *end)
 {
 	t_help	*help;
 
@@ -21,7 +30,15 @@ t_help	*create_help(void)
 	help->x = 0;
 	help->y = 0;
 	help->next = NULL;
-	help->start = 0;
-	help->end = 0;
+	if (*start == 1 || *start == -1)
+	    help->start = 1;
+	else
+	    help->start = 0;
+	if (*end == 1 || *end == -1)
+	    help->end = *end;
+	else
+	    help->end = 0;
+	*start = 0;
+	*end = 0;
 	return (help);
 }

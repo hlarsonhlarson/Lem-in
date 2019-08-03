@@ -34,12 +34,48 @@ int		get_ant_num(char *line)
 	return (n);
 }	
 
-int		ft_line_pars_one(char *line, t_help **help)
+int     ft_get_ant_num(int k, char **line)
 {
-	if (line[0] == '#')
-		return (ft_check_comment(line,  help));
-	else
-		return (ft_check_format_one(*help, line));
+    int     n;
+
+    n = 0;
+    while (get_next_line(k, line) > 0)
+    {
+        if (*line[0] == '#')
+        {
+            if (ft_check_comment_ant(*line) < 0)
+                return (-1);
+        }
+        else
+        {
+            n = get_ant_num(*line);
+            return (n);
+        }
+    }
+    return (-1);
+}
+
+int     ft_get_basic_coord(int k, char **line, t_help **help)
+{
+    int     start;
+    int     end;
+
+    start = 0;
+    end = 0;
+    while (get_next_line(k, line) > 0)
+    {
+        if (*line[0] == '#')
+        {
+            if (ft_check_comment(*line, help, &start, &end) < 0)
+                return (-1);
+        }
+        else
+            {
+                if (ft_check_format_one(help, *line, &start, &end) < 0)
+                    return (-1);
+            }
+    }
+    return (-1);
 }
 
 int		ft_validate(t_graph ***graph, char **argv)
@@ -52,20 +88,13 @@ int		ft_validate(t_graph ***graph, char **argv)
 	k = open(argv[1], O_RDONLY);
 	help = NULL;
 	line = NULL;
-	if (get_next_line(k , &line) > 0)
-		n = get_ant_num(line);
-	else
-		return (-1);
+	n = ft_get_ant_num(k, &line);
 	if (n < 0)
 		return (-1);
-	while (get_next_line(k, &line) > 0)
-	{
-		if (ft_line_pars_one(line, &help) == -1)
-			break ;
-		ft_strdel(&line);
-	}
-	if (!(ft_strchr(line, '-')))
+	ft_get_basic_coord(k, &line, &help);
+	if (check_first_line(line, help) == -1)
 	    return (-1);
-	*graph = create_graph(help ,n);
+	*graph = create_graph(help, n);
+	ft_printf("HI");
 	return (0);
 }

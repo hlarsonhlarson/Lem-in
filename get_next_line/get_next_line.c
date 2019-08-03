@@ -26,7 +26,7 @@ static t_list		*get_file(t_list **file, int fd)
 			return (tmp);
 		tmp = tmp->next;
 	}
-	tmp = (t_list *)malloc(sizeof(tmp));
+	tmp = (t_list *)malloc(sizeof(t_list));
 	tmp->content = ft_strnew(0);
 	tmp->content_size = fd;
 	ft_lstadd(file, tmp);

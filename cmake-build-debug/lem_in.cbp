@@ -90,6 +90,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/hlarson/lem_in/check_first_line.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/hlarson/lem_in/count_num.c">
 			<Option target="lem_in"/>
 		</Unit>

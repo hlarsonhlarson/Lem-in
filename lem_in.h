@@ -38,12 +38,15 @@ typedef struct		s_help
 	int				y;
 }					t_help;
 
-int					ft_check_comment(char *line, t_help **help);
-int					ft_check_format_one(t_help **help, char *line);
+int					ft_check_comment(char *line, t_help **help, int *start, int *end);
+int                 ft_check_comment_ant(char *line);
+int					ft_check_format_one(t_help **help, char *line, int *start, int *end);
+int                 check_first_line(char *line, t_help *help);
 t_graph				**create_graph(t_help *help, int n);
 int					ft_validate(t_graph ***graph, char **argv);
 int					count_num(int k);
-t_help				*create_help(void);
+t_help				*create_help(int *start, int *end);
+void                add_help(t_help *tmp, t_help *help);
 char				*ft_copy_name(char *line, int i);
 
 #endif

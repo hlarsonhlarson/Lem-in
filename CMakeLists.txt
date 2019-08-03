@@ -114,4 +114,5 @@ add_executable(lem_in
         lem_in.h
         main.c
         create_help.c
-        ft_copy_name.c)
+        ft_copy_name.c
+        check_first_line.c)
