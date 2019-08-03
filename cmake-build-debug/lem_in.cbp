@@ -408,6 +408,9 @@
 		<Unit filename="/Users/hlarson/lem_in/main.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/hlarson/lem_in/put_first_adjacency.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/hlarson/lem_in/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

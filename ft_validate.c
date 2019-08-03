@@ -95,6 +95,6 @@ int		ft_validate(t_graph ***graph, char **argv)
 	if (check_first_line(line, help) == -1)
 	    return (-1);
 	*graph = create_graph(help, n);
-	ft_printf("HI");
+	put_first_adjacency(line, *graph);
 	return (0);
 }

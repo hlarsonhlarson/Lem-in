@@ -115,4 +115,5 @@ add_executable(lem_in
         main.c
         create_help.c
         ft_copy_name.c
-        check_first_line.c)
+        check_first_line.c
+        put_first_adjacency.c)

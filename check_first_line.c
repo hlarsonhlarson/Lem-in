@@ -57,6 +57,34 @@ static int check_second_name(char *c, t_help *help)
     return (0);
 }
 
+int     check_start_elem(t_help *help)
+{
+    t_help  *tmp;
+
+    tmp = help;
+    while (tmp)
+    {
+        if (tmp->start == 1)
+            return (1);
+        tmp = tmp->next;
+    }
+    return (-1);
+}
+
+int     check_end_elem(t_help *help)
+{
+    t_help  *tmp;
+
+    tmp = help;
+    while (tmp)
+    {
+        if (tmp->end == 1)
+            return (1);
+        tmp = tmp->next;
+    }
+    return (-1);
+}
+
 int     check_first_line(char *line, t_help *help)
 {
     int     i;
@@ -73,6 +101,10 @@ int     check_first_line(char *line, t_help *help)
     c = ft_strnew(ft_strlen(line) - i);
     c = ft_strcpy(c, line + i + 1);
     if (check_second_name(c, help) == -1)
+        return (-1);
+    if (check_start_elem(help) == -1)
+        return (-1);
+    if (check_end_elem(help) == -1)
         return (-1);
     return (0);
 }

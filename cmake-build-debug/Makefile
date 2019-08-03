@@ -2823,6 +2823,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main.c.s
 .PHONY : main.c.s
 
+put_first_adjacency.o: put_first_adjacency.c.o
+
+.PHONY : put_first_adjacency.o
+
+# target to build an object file
+put_first_adjacency.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/put_first_adjacency.c.o
+.PHONY : put_first_adjacency.c.o
+
+put_first_adjacency.i: put_first_adjacency.c.i
+
+.PHONY : put_first_adjacency.i
+
+# target to preprocess a source file
+put_first_adjacency.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/put_first_adjacency.c.i
+.PHONY : put_first_adjacency.c.i
+
+put_first_adjacency.s: put_first_adjacency.c.s
+
+.PHONY : put_first_adjacency.s
+
+# target to generate assembly for a file
+put_first_adjacency.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/put_first_adjacency.c.s
+.PHONY : put_first_adjacency.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3132,6 +3159,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... put_first_adjacency.o"
+	@echo "... put_first_adjacency.i"
+	@echo "... put_first_adjacency.s"
 .PHONY : help
 
 
