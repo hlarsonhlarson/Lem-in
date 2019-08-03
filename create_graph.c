@@ -46,7 +46,7 @@ t_graph		**create_graph(t_help *help, int n)
 
 	i = 0;
 	tmp = help;
-	graph = (t_graph **)malloc(sizeof(t_graph **) * count_elem(help));
+	graph = (t_graph **)malloc(sizeof(t_graph) * (count_elem(help)));
 	while (tmp)
 	{
 		graph[i] = (t_graph *)malloc(sizeof(t_graph));

@@ -22,8 +22,8 @@ typedef struct		s_graph
 	char			*name;
 	int				ant_number;
 	struct s_graph	*adjacency;
-	bool			start;
-	bool			end;
+    char			start;
+    char			end;
 	int				x;
 	int				y;
 }					t_graph;
@@ -32,8 +32,8 @@ typedef struct		s_help
 {
 	char			*name;
 	struct s_help	*next;
-	bool			start;
-	bool			end;
+    char			start;
+    char			end;
 	int				x;
 	int				y;
 }					t_help;
