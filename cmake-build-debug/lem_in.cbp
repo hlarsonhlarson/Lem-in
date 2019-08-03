@@ -111,6 +111,9 @@
 		<Unit filename="/Users/hlarson/lem_in/ft_copy_name.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/hlarson/lem_in/ft_make_adjacency.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/hlarson/lem_in/ft_printf/count_numbers.c">
 			<Option target="lem_in"/>
 		</Unit>

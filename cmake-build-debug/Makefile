@@ -312,6 +312,33 @@ ft_copy_name.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_copy_name.c.s
 .PHONY : ft_copy_name.c.s
 
+ft_make_adjacency.o: ft_make_adjacency.c.o
+
+.PHONY : ft_make_adjacency.o
+
+# target to build an object file
+ft_make_adjacency.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_make_adjacency.c.o
+.PHONY : ft_make_adjacency.c.o
+
+ft_make_adjacency.i: ft_make_adjacency.c.i
+
+.PHONY : ft_make_adjacency.i
+
+# target to preprocess a source file
+ft_make_adjacency.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_make_adjacency.c.i
+.PHONY : ft_make_adjacency.c.i
+
+ft_make_adjacency.s: ft_make_adjacency.c.s
+
+.PHONY : ft_make_adjacency.s
+
+# target to generate assembly for a file
+ft_make_adjacency.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_make_adjacency.c.s
+.PHONY : ft_make_adjacency.c.s
+
 ft_printf/count_numbers.o: ft_printf/count_numbers.c.o
 
 .PHONY : ft_printf/count_numbers.o
@@ -2880,6 +2907,9 @@ help:
 	@echo "... ft_copy_name.o"
 	@echo "... ft_copy_name.i"
 	@echo "... ft_copy_name.s"
+	@echo "... ft_make_adjacency.o"
+	@echo "... ft_make_adjacency.i"
+	@echo "... ft_make_adjacency.s"
 	@echo "... ft_printf/count_numbers.o"
 	@echo "... ft_printf/count_numbers.i"
 	@echo "... ft_printf/count_numbers.s"

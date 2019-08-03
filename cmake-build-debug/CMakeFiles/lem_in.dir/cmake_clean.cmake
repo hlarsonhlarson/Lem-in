@@ -100,6 +100,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/ft_copy_name.c.o"
   "CMakeFiles/lem_in.dir/check_first_line.c.o"
   "CMakeFiles/lem_in.dir/put_first_adjacency.c.o"
+  "CMakeFiles/lem_in.dir/ft_make_adjacency.c.o"
   "lem_in.pdb"
   "lem_in"
 )
