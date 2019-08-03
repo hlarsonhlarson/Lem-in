@@ -29,7 +29,7 @@ static int		count_elem(t_help *help)
 
 static void		copy_data_from_help(t_graph *graph, t_help *tmp)
 {
-		(graph)->name = tmp->name;
+		(graph)->name = ft_strdup(tmp->name);
 		(graph)->start = tmp->start;
 		(graph)->end = tmp->end;
 		(graph)->x = tmp->x;
@@ -55,6 +55,7 @@ t_graph		**create_graph(t_help *help, int n)
 		ft_strdel(&(tmp->name));
 		free(tmp);
 		tmp = swap;
+		i++;
 	}
 	(graph[0])->ant_number = n;
 	return (graph);
