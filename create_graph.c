@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:21:12 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 18:52:39 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/03 20:32:26 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		count_elem(t_help *help)
 
 	i = 0;
 	tmp = help;
-	while(tmp)
+	while (tmp)
 	{
 		tmp = tmp->next;
 		i++;
@@ -29,15 +29,15 @@ static int		count_elem(t_help *help)
 
 static void		copy_data_from_help(t_graph *graph, t_help *tmp)
 {
-		(graph)->name = ft_strdup(tmp->name);
-		(graph)->start = tmp->start;
-		(graph)->end = tmp->end;
-		(graph)->x = tmp->x;
-		(graph)->y = tmp->y;
-		(graph)->adjacency = NULL;
+	(graph)->name = ft_strdup(tmp->name);
+	(graph)->start = tmp->start;
+	(graph)->end = tmp->end;
+	(graph)->x = tmp->x;
+	(graph)->y = tmp->y;
+	(graph)->adjacency = NULL;
 }
 
-t_graph		**create_graph(t_help *help, int n)
+t_graph			**create_graph(t_help *help, int n)
 {
 	t_graph		**graph;
 	t_help		*tmp;

@@ -36,6 +36,13 @@ CMakeFiles/lem_in.dir/ft_check_comment.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/ft_check_comment.c.o: ../get_next_line/libft/libft.h
 CMakeFiles/lem_in.dir/ft_check_comment.c.o: ../lem_in.h
 
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../ft_check_format_exit.c
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../ft_printf/ft_includes.h
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../get_next_line/libft/libft.h
+CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../lem_in.h
+
 CMakeFiles/lem_in.dir/ft_check_format_one.c.o: ../ft_check_format_one.c
 CMakeFiles/lem_in.dir/ft_check_format_one.c.o: ../ft_printf/ft_includes.h
 CMakeFiles/lem_in.dir/ft_check_format_one.c.o: ../ft_printf/ft_printf.h

@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 15:33:11 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 19:01:41 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/03 20:59:30 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,49 +41,51 @@ static int		ft_help_atoi(int x, char *line)
 	return (0);
 }
 
-static int		ft_exit_format(t_help *help)
-{
-	free(help->name);
-	return (-1);
-}
-
 static int		ft_check_name(t_help *help, t_help *tmp)
 {
 	while (tmp != help && tmp)
 	{
 		if (ft_strcmp(tmp->name, help->name) == 0)
 			return (-1);
-		tmp =tmp->next;
+		tmp = tmp->next;
 	}
 	return (0);
 }
 
-int		ft_check_format_one(t_help **help, char *line, int *start, int *end)
+int				ft_get_num(t_help **help, char *line, int *i)
+{
+	(*help)->x = ft_atoi(line + *i);
+	if (ft_help_atoi((*help)->x, line + *i) == -1)
+		return (ft_exit_format(*help));
+	*i = *i + find_char(line + *i, ' ');
+	if (line[*i] == '\0')
+		return (-1);
+	(*help)->y = ft_atoi(line + *i);
+	if (ft_help_atoi((*help)->y, line + *i) == -1)
+		return (ft_exit_format(*help));
+	*i = *i + find_char(line + *i, ' ');
+	return (0);
+}
+
+int				ft_check_format_one(t_help **help,
+				char *line, int *start, int *end)
 {
 	int		i;
-	t_help  *tmp;
+	t_help	*tmp;
 
 	i = find_char(line, ' ');
-	if (line[i] == '\0')
+	if (i > ft_strlen(line))
 		return (-1);
-    tmp = *help;
-    while (*help)
-        *help = (*help)->next;
-    *help = create_help(start, end);
-    add_help(tmp, *help);
-    (*help)->name = ft_copy_name(line, i);
+	tmp = *help;
+	while (*help)
+		*help = (*help)->next;
+	*help = create_help(start, end);
+	add_help(tmp, *help);
+	(*help)->name = ft_copy_name(line, i);
 	if (ft_check_name(*help, tmp) == -1)
 		return (ft_exit_format(*help));
-    (*help)->x = ft_atoi(line + i);
-	if (ft_help_atoi((*help)->x, line + i) == -1)
-		return (ft_exit_format(*help));
-	i = i + find_char(line + i, ' ');
-	if (line[i] == '\0')
+	if (ft_get_num(help, line, &i) == -1)
 		return (-1);
-    (*help)->y = ft_atoi(line + i);
-	if (ft_help_atoi((*help)->y, line + i) == -1)
-		return (ft_exit_format(*help));
-	i = i + find_char(line + i, ' ');
 	*help = (tmp == NULL) ? *help : tmp;
 	return ((line[i - 1] == '\0') ? 0 : ft_exit_format(*help));
 }

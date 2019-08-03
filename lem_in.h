@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 17:57:01 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/02 19:44:13 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/03 20:40:13 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void                add_help(t_help *tmp, t_help *help);
 char				*ft_copy_name(char *line, int i);
 void                 put_first_adjacency(char *line, t_graph **graph);
 int                  ft_make_adjacency(char *line, t_graph **graph);
+int					ft_exit_format(t_help *help);
 
 #endif

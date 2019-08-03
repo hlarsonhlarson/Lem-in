@@ -117,4 +117,5 @@ add_executable(lem_in
         ft_copy_name.c
         check_first_line.c
         put_first_adjacency.c
-        ft_make_adjacency.c)
+        ft_make_adjacency.c
+        ft_check_format_exit.c)

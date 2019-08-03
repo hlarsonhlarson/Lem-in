@@ -105,6 +105,9 @@
 		<Unit filename="/Users/hlarson/lem_in/ft_check_comment.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/hlarson/lem_in/ft_check_format_exit.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/hlarson/lem_in/ft_check_format_one.c">
 			<Option target="lem_in"/>
 		</Unit>
