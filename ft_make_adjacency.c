@@ -105,6 +105,11 @@ int        ft_make_adjacency(char *line, t_graph **graph)
         ft_strdel(&c);
         return (-1);
     }
+    if (first_link == second_link)
+    {
+        ft_strdel(&c);
+        return (-1);
+    }
     connet_link(graph, first_link, second_link);
     ft_strdel(&c);
     return (0);
