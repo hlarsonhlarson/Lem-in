@@ -54,6 +54,20 @@ static int get_second_link(char *line,  t_graph **graph)
     return (j);
 }
 
+static void        connet_link(t_graph **graph, int first_link, int second_link)
+{
+    t_graph **tmp;
+
+    tmp = graph;
+    while ((tmp[first_link])->adjacency)
+        tmp[first_link] = (tmp[first_link])->adjacency;
+    (tmp[first_link])->adjacency = graph[second_link];
+    tmp = graph;
+    while ((tmp[second_link])->adjacency)
+        tmp[second_link] = (tmp[second_link])->adjacency;
+    (tmp[second_link])->adjacency = graph[first_link];
+}
+
 int        ft_make_adjacency(char *line, t_graph **graph)
 {
     int     i;
@@ -75,8 +89,7 @@ int        ft_make_adjacency(char *line, t_graph **graph)
         ft_strdel(&c);
         return (-1);
     }
-    (graph[first_link])->adjacency = graph[second_link];
-    (graph[second_link])->adjacency = graph[first_link];
+    connet_link(graph, first_link, second_link);
     ft_strdel(&c);
     return (0);
 }
