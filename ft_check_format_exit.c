@@ -12,8 +12,3 @@
 
 #include "lem_in.h"
 
-int		ft_exit_format(t_help *help)
-{
-	free(help->name);
-	return (-1);
-}

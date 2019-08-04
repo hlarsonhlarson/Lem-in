@@ -64,16 +64,16 @@ int		ft_check_comment(char *line, t_help **help, int *start, int *end)
 	else if (ft_strcmp(line, "##end") == 0)
 		*end = *end + 1;
 	if (*start > 1 || *end > 1)
-		return (exit_del_line(&line));
+		return (ft_exit_checking(&line, help));
 	if (ft_strcmp(line, "##start") == 0)
 	{
 		if (check_start(*help) == -1)
-			return (exit_del_line(&line));
+			return (ft_exit_checking(&line, help));
 	}
 	else if (ft_strcmp(line, "##end") == 0)
 	{
 		if (check_end(*help) == -1)
-			return (exit_del_line(&line));
+			return (ft_exit_checking(&line, help));
 	}
 	ft_strdel(&line);
 	return (0);

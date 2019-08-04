@@ -64,7 +64,7 @@ int				ft_get_num(t_help **help, char *line, int *i, int j)
 	if (ft_help_atoi((*help)->y, line + *i) == -1)
 		return (-1);
 	*i = *i + find_char(line + *i, ' ');
-	if (*i < j)
+	if (*i <= j)
 	    return (-1);
 	return (0);
 }
@@ -75,26 +75,23 @@ int				ft_check_format_one(t_help **help,
 	int		i;
 	t_help	*tmp;
 	int     j;
+	t_help  **head;
 
     tmp = *help;
+    head = help;
     j = ft_strlen(line);
 	i = find_char(line, ' ');
 	if (i > j)
-    {
-        if (check_first_line(line, tmp) == -1)
-            return (ft_exit_checking(&line, &tmp));
-        else
-            return (1);
-    }
+        return ((check_first_line(line, tmp) == -1) ? -1 : 1);
 	while (*help)
 		*help = (*help)->next;
 	*help = create_help(start, end);
 	add_help(tmp, *help);
 	(*help)->name = ft_copy_name(line, i);
 	if (ft_check_name(*help, tmp) == -1)
-		return (ft_exit_format(*help));
+		return (ft_exit_checking(&line, head));
 	if (ft_get_num(help, line, &i, j) == -1)
-		return (ft_exit_checking(&line, &tmp));
+		return (ft_exit_checking(&line, head));
 	*help = (tmp == NULL) ? *help : tmp;
 	ft_strdel(&line);
 	return (0);
