@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /Users/hlarson/lemm/ft_check_format_one.c
 lem_in.h
 /Users/hlarson/lemm/lem_in.h
@@ -13,6 +14,15 @@ lem_in.h
 /Users/hlarson/lemm/ft_printf/ft_includes.h
 
 /Users/hlarson/lemm/ft_printf/ft_printf.h
+=======
+/Users/hlarson/lem_in/ft_make_adjacency.c
+lem_in.h
+/Users/hlarson/lem_in/lem_in.h
+
+/Users/hlarson/lem_in/ft_printf/ft_includes.h
+
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
+>>>>>>> 8dfaff8405f671dfb1129969c5eaa3f964625ee6
 unistd.h
 -
 stdlib.h
@@ -24,6 +34,7 @@ stdarg.h
 stdint.h
 -
 ft_includes.h
+<<<<<<< HEAD
 /Users/hlarson/lemm/ft_printf/ft_includes.h
 
 /Users/hlarson/lemm/get_next_line/get_next_line.h
@@ -39,10 +50,31 @@ string.h
 /Users/hlarson/lemm/lem_in.h
 ft_printf/ft_printf.h
 /Users/hlarson/lemm/ft_printf/ft_printf.h
+=======
+/Users/hlarson/lem_in/ft_printf/ft_includes.h
+
+/Users/hlarson/lem_in/get_next_line/get_next_line.h
+libft/libft.h
+/Users/hlarson/lem_in/get_next_line/libft/libft.h
+../ft_printf/ft_printf.h
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
+
+/Users/hlarson/lem_in/get_next_line/libft/libft.h
+string.h
+-
+
+/Users/hlarson/lem_in/lem_in.h
+ft_printf/ft_printf.h
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
+>>>>>>> 8dfaff8405f671dfb1129969c5eaa3f964625ee6
 stdbool.h
 -
 fcntl.h
 -
 get_next_line/get_next_line.h
+<<<<<<< HEAD
 /Users/hlarson/lemm/get_next_line/get_next_line.h
+=======
+/Users/hlarson/lem_in/get_next_line/get_next_line.h
+>>>>>>> 8dfaff8405f671dfb1129969c5eaa3f964625ee6
 
