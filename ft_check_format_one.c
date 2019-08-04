@@ -80,7 +80,7 @@ int				ft_check_format_one(t_help **help,
     j = ft_strlen(line);
 	i = find_char(line, ' ');
 	if (i > j)
-        return ((check_first_line(line, tmp) == -1) ? -1 : 1);
+        return ((check_first_line(line, tmp) == -1) ? ft_exit_checking(&line, &tmp) : 1);
 	while (*help)
 		*help = (*help)->next;
 	*help = create_help(start, end);
