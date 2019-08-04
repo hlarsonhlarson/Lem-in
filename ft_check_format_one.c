@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 15:33:11 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/03 20:59:30 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/04 18:01:24 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int				ft_get_num(t_help **help, char *line, int *i, int j)
 		return (-1);
 	*i = *i + find_char(line + *i, ' ');
 	if (*i <= j)
-	    return (-1);
+		return (-1);
 	return (0);
 }
 
@@ -74,13 +74,13 @@ int				ft_check_format_one(t_help **help,
 {
 	int		i;
 	t_help	*tmp;
-	int     j;
+	int		j;
 
-    tmp = *help;
-    j = ft_strlen(line);
+	tmp = *help;
+	j = ft_strlen(line);
 	i = find_char(line, ' ');
 	if (i > j)
-        return ((check_first_line(line, tmp) == -1) ? ft_exit_checking(&line, &tmp) : 1);
+		return ((check_first_line(line, tmp) == -1) ? ft_exit_checking(&line, &tmp) : 1);
 	while (*help)
 		*help = (*help)->next;
 	*help = create_help(start, end);
