@@ -51,12 +51,6 @@ int		ft_check_comment_ant(char *line)
 	return (0);
 }
 
-int		exit_del_line(char **line)
-{
-	ft_strdel(line);
-	return (-1);
-}
-
 int		ft_check_comment(char *line, t_help **help, int *start, int *end)
 {
 	if (ft_strcmp(line, "##start") == 0)

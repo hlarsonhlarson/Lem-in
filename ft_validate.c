@@ -123,5 +123,6 @@ int		ft_validate(t_graph ***graph, char **argv)
 	put_first_adjacency(line, *graph);
 	if (ft_get_adjacency(&line, *graph, k) == -1)
 	    return (-1);
+	ft_strdel(&line);
 	return (0);
 }

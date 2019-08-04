@@ -96,21 +96,12 @@ int        ft_make_adjacency(char *line, t_graph **graph)
         i++;
     first_link = get_first_name(line, i, graph);
     if (first_link == -1)
-        return (-1);
+        return (ft_exit_adjacency_error_two(line, graph));
     c = ft_strnew(ft_strlen(line) - i);
     c = ft_strcpy(c, line + i + 1);
     second_link = get_second_link(c, graph);
-    if (second_link == -1)
-    {
-        ft_strdel(&c);
-        return (-1);
-    }
-    if (first_link == second_link)
-    {
-        ft_strdel(&c);
-        return (-1);
-    }
+    if (first_link == second_link || second_link == -1)
+        return (ft_exit_adjacency_error(c, line, graph));
     connet_link(graph, first_link, second_link);
-    ft_strdel(&c);
-    return (0);
+    return (ft_exit_adjacency_norm(c, line));
 }

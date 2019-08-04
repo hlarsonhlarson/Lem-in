@@ -72,4 +72,5 @@ void        put_first_adjacency(char *line, t_graph **graph)
     (graph[first_link])->adjacency = copy_inform(graph[second_link]);
     (graph[second_link])->adjacency = copy_inform(graph[first_link]);
     ft_strdel(&c);
+    ft_strdel(&line);
 }

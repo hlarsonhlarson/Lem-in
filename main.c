@@ -20,5 +20,6 @@ int		main(int argc, char **argv)
 	if (argc == 1)
 		return (ft_printf("\n"));
 	ft_printf("%d\n", ft_validate(&graph, argv));
+	ft_exit_adjacency(graph);
 	return (0);
 }
