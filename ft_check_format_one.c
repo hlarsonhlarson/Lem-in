@@ -56,16 +56,16 @@ int				ft_get_num(t_help **help, char *line, int *i, int j)
 {
 	(*help)->x = ft_atoi(line + *i);
 	if (ft_help_atoi((*help)->x, line + *i) == -1)
-		return (ft_exit_format(*help));
+		return (-1);
 	*i = *i + find_char(line + *i, ' ');
 	if (*i > j)
 		return (-1);
 	(*help)->y = ft_atoi(line + *i);
 	if (ft_help_atoi((*help)->y, line + *i) == -1)
-		return (ft_exit_format(*help));
+		return (-1);
 	*i = *i + find_char(line + *i, ' ');
 	if (*i < j)
-	    return (ft_exit_format(*help));
+	    return (-1);
 	return (0);
 }
 
@@ -82,7 +82,7 @@ int				ft_check_format_one(t_help **help,
 	if (i > j)
     {
         if (check_first_line(line, tmp) == -1)
-            return (ft_exit_checking(&line, help));
+            return (ft_exit_checking(&line, &tmp));
         else
             return (1);
     }
@@ -94,7 +94,7 @@ int				ft_check_format_one(t_help **help,
 	if (ft_check_name(*help, tmp) == -1)
 		return (ft_exit_format(*help));
 	if (ft_get_num(help, line, &i, j) == -1)
-		return (-1);
+		return (ft_exit_checking(&line, &tmp));
 	*help = (tmp == NULL) ? *help : tmp;
 	ft_strdel(&line);
 	return (0);
