@@ -49,11 +49,8 @@ int     ft_get_ant_num(int k, char **line)
         else
         {
             n = get_ant_num(*line);
-            if (n == -1)
-            {
-                ft_strdel(line);
+            if (n < 0)
                 return (-1);
-            }
             return (n);
         }
     }
