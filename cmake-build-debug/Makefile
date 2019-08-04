@@ -339,6 +339,33 @@ ft_copy_name.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_copy_name.c.s
 .PHONY : ft_copy_name.c.s
 
+ft_exit_checking.o: ft_exit_checking.c.o
+
+.PHONY : ft_exit_checking.o
+
+# target to build an object file
+ft_exit_checking.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_exit_checking.c.o
+.PHONY : ft_exit_checking.c.o
+
+ft_exit_checking.i: ft_exit_checking.c.i
+
+.PHONY : ft_exit_checking.i
+
+# target to preprocess a source file
+ft_exit_checking.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_exit_checking.c.i
+.PHONY : ft_exit_checking.c.i
+
+ft_exit_checking.s: ft_exit_checking.c.s
+
+.PHONY : ft_exit_checking.s
+
+# target to generate assembly for a file
+ft_exit_checking.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_exit_checking.c.s
+.PHONY : ft_exit_checking.c.s
+
 ft_make_adjacency.o: ft_make_adjacency.c.o
 
 .PHONY : ft_make_adjacency.o
@@ -2937,6 +2964,9 @@ help:
 	@echo "... ft_copy_name.o"
 	@echo "... ft_copy_name.i"
 	@echo "... ft_copy_name.s"
+	@echo "... ft_exit_checking.o"
+	@echo "... ft_exit_checking.i"
+	@echo "... ft_exit_checking.s"
 	@echo "... ft_make_adjacency.o"
 	@echo "... ft_make_adjacency.i"
 	@echo "... ft_make_adjacency.s"

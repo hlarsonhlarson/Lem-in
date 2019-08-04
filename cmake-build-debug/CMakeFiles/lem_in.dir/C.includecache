@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/hlarson/lem_in/ft_check_format_one.c
-lem_in.h
-/Users/hlarson/lem_in/lem_in.h
-
 /Users/hlarson/lem_in/ft_printf/ft_includes.h
 
 /Users/hlarson/lem_in/ft_printf/ft_printf.h
@@ -25,6 +21,10 @@ stdint.h
 -
 ft_includes.h
 /Users/hlarson/lem_in/ft_printf/ft_includes.h
+
+/Users/hlarson/lem_in/ft_validate.c
+lem_in.h
+/Users/hlarson/lem_in/lem_in.h
 
 /Users/hlarson/lem_in/get_next_line/get_next_line.h
 libft/libft.h

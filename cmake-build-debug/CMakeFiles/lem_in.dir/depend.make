@@ -57,6 +57,13 @@ CMakeFiles/lem_in.dir/ft_copy_name.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/ft_copy_name.c.o: ../get_next_line/libft/libft.h
 CMakeFiles/lem_in.dir/ft_copy_name.c.o: ../lem_in.h
 
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../ft_exit_checking.c
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../ft_printf/ft_includes.h
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../get_next_line/libft/libft.h
+CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../lem_in.h
+
 CMakeFiles/lem_in.dir/ft_make_adjacency.c.o: ../ft_make_adjacency.c
 CMakeFiles/lem_in.dir/ft_make_adjacency.c.o: ../ft_printf/ft_includes.h
 CMakeFiles/lem_in.dir/ft_make_adjacency.c.o: ../ft_printf/ft_printf.h

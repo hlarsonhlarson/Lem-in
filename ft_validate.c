@@ -49,6 +49,11 @@ int     ft_get_ant_num(int k, char **line)
         else
         {
             n = get_ant_num(*line);
+            if (n == -1)
+            {
+                ft_strdel(line);
+                return (-1);
+            }
             return (n);
         }
     }
@@ -59,6 +64,7 @@ int     ft_get_basic_coord(int k, char **line, t_help **help)
 {
     int     start;
     int     end;
+    int     l;
 
     start = 0;
     end = 0;
@@ -71,8 +77,10 @@ int     ft_get_basic_coord(int k, char **line, t_help **help)
         }
         else
             {
-                if (ft_check_format_one(help, *line, &start, &end) < 0)
+                if ((l =ft_check_format_one(help, *line, &start, &end)) < 0)
                     return (-1);
+                if (l == 1)
+                    return (0);
             }
     }
     return (-1);
@@ -89,7 +97,7 @@ int     ft_get_adjacency(char **line, t_graph **graph, int k)
         }
         else
         {
-            if (ft_make_adjacency(*line, graph) < 0)
+            if ((ft_make_adjacency(*line, graph)) < 0)
                 return (-1);
         }
     }
@@ -109,8 +117,7 @@ int		ft_validate(t_graph ***graph, char **argv)
 	n = ft_get_ant_num(k, &line);
 	if (n < 0)
 		return (-1);
-	ft_get_basic_coord(k, &line, &help);
-	if (check_first_line(line, help) == -1)
+	if (ft_get_basic_coord(k, &line, &help) == -1)
 	    return (-1);
 	*graph = create_graph(help, n);
 	put_first_adjacency(line, *graph);
