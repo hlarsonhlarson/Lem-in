@@ -75,10 +75,8 @@ int				ft_check_format_one(t_help **help,
 	int		i;
 	t_help	*tmp;
 	int     j;
-	t_help  **head;
 
     tmp = *help;
-    head = help;
     j = ft_strlen(line);
 	i = find_char(line, ' ');
 	if (i > j)
@@ -89,9 +87,9 @@ int				ft_check_format_one(t_help **help,
 	add_help(tmp, *help);
 	(*help)->name = ft_copy_name(line, i);
 	if (ft_check_name(*help, tmp) == -1)
-		return (ft_exit_checking(&line, head));
+		return (ft_exit_checking(&line, &tmp));
 	if (ft_get_num(help, line, &i, j) == -1)
-		return (ft_exit_checking(&line, head));
+		return (ft_exit_checking(&line, &tmp));
 	*help = (tmp == NULL) ? *help : tmp;
 	ft_strdel(&line);
 	return (0);
