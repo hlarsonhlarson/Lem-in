@@ -258,33 +258,6 @@ ft_check_comment.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_check_comment.c.s
 .PHONY : ft_check_comment.c.s
 
-ft_check_format_exit.o: ft_check_format_exit.c.o
-
-.PHONY : ft_check_format_exit.o
-
-# target to build an object file
-ft_check_format_exit.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_check_format_exit.c.o
-.PHONY : ft_check_format_exit.c.o
-
-ft_check_format_exit.i: ft_check_format_exit.c.i
-
-.PHONY : ft_check_format_exit.i
-
-# target to preprocess a source file
-ft_check_format_exit.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_check_format_exit.c.i
-.PHONY : ft_check_format_exit.c.i
-
-ft_check_format_exit.s: ft_check_format_exit.c.s
-
-.PHONY : ft_check_format_exit.s
-
-# target to generate assembly for a file
-ft_check_format_exit.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/ft_check_format_exit.c.s
-.PHONY : ft_check_format_exit.c.s
-
 ft_check_format_one.o: ft_check_format_one.c.o
 
 .PHONY : ft_check_format_one.o
@@ -2982,9 +2955,6 @@ help:
 	@echo "... ft_check_comment.o"
 	@echo "... ft_check_comment.i"
 	@echo "... ft_check_comment.s"
-	@echo "... ft_check_format_exit.o"
-	@echo "... ft_check_format_exit.i"
-	@echo "... ft_check_format_exit.s"
 	@echo "... ft_check_format_one.o"
 	@echo "... ft_check_format_one.i"
 	@echo "... ft_check_format_one.s"

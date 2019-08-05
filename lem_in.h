@@ -17,11 +17,18 @@
 # include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
+
+typedef struct      s_adjacency
+{
+    int                 node_num;
+    struct s_adjacency  *next;
+}                   t_adjacency;
+
 typedef struct		s_graph
 {
 	char			*name;
 	int				ant_number;
-	struct s_graph	*adjacency;
+	t_adjacency	    *adjacency;
     char			start;
     char			end;
 	int				x;
@@ -55,5 +62,6 @@ int                 ft_exit_adjacency(t_graph **graph);
 int                 ft_exit_adjacency_norm(char *c, char *line);
 int                 ft_exit_adjacency_error(char *c, char *line, t_graph **graph);
 int                 ft_exit_adjacency_error_two(char *line, t_graph **graph);
+t_adjacency         *make_adjacency(int link_num);
 
 #endif

@@ -54,34 +54,25 @@ static int get_second_link(char *line,  t_graph **graph)
     return (j);
 }
 
-static t_graph      *copy_inform(t_graph *graph)
-{
-    t_graph *tmp;
-
-    tmp = (t_graph *)malloc(sizeof(t_graph));
-    tmp->name = ft_strdup(graph->name);
-    tmp->x = graph->x;
-    tmp->end = graph->end;
-    tmp->y = graph->y;
-    tmp->start = graph->start;
-    tmp->ant_number = tmp->ant_number;
-    tmp->adjacency = NULL;
-    return (tmp);
-}
-
 static void        connet_link(t_graph **graph, int first_link, int second_link)
 {
-    t_graph *tmp;
-    t_graph *another_tmp;
+    t_adjacency *tmp;
+    t_adjacency *another_tmp;
 
-    tmp = graph[first_link];
-    while (tmp->adjacency)
-        tmp = tmp->adjacency;
-    tmp->adjacency = copy_inform(graph[second_link]);
-    another_tmp = graph[second_link];
-    while (another_tmp->adjacency)
-        another_tmp = another_tmp->adjacency;
-    another_tmp->adjacency = copy_inform(graph[first_link]);
+    tmp = graph[first_link]->adjacency;
+    while (tmp && tmp->next)
+        tmp = tmp->next;
+    if (tmp != NULL)
+        tmp->next = make_adjacency(second_link);
+    else
+        graph[first_link]->adjacency = make_adjacency(second_link);
+    another_tmp = graph[second_link]->adjacency;
+    while (another_tmp && another_tmp->next)
+        another_tmp = another_tmp->next;
+    if (another_tmp != NULL)
+        another_tmp->next = make_adjacency(first_link);
+    else
+        graph[second_link]->adjacency = make_adjacency(first_link);
 }
 
 int        ft_make_adjacency(char *line, t_graph **graph)

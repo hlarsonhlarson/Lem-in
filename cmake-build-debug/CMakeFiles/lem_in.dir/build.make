@@ -1383,22 +1383,9 @@ CMakeFiles/lem_in.dir/ft_make_adjacency.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/ft_make_adjacency.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hlarson/lem_in/ft_make_adjacency.c -o CMakeFiles/lem_in.dir/ft_make_adjacency.c.s
 
-CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/ft_check_format_exit.c.o: ../ft_check_format_exit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/lem_in.dir/ft_check_format_exit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/ft_check_format_exit.c.o   -c /Users/hlarson/lem_in/ft_check_format_exit.c
-
-CMakeFiles/lem_in.dir/ft_check_format_exit.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/ft_check_format_exit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hlarson/lem_in/ft_check_format_exit.c > CMakeFiles/lem_in.dir/ft_check_format_exit.c.i
-
-CMakeFiles/lem_in.dir/ft_check_format_exit.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/ft_check_format_exit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hlarson/lem_in/ft_check_format_exit.c -o CMakeFiles/lem_in.dir/ft_check_format_exit.c.s
-
 CMakeFiles/lem_in.dir/ft_exit_checking.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/ft_exit_checking.c.o: ../ft_exit_checking.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/lem_in.dir/ft_exit_checking.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/lem_in.dir/ft_exit_checking.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/ft_exit_checking.c.o   -c /Users/hlarson/lem_in/ft_exit_checking.c
 
 CMakeFiles/lem_in.dir/ft_exit_checking.c.i: cmake_force
@@ -1411,7 +1398,7 @@ CMakeFiles/lem_in.dir/ft_exit_checking.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o: ../ft_exit_adjacency.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o   -c /Users/hlarson/lem_in/ft_exit_adjacency.c
 
 CMakeFiles/lem_in.dir/ft_exit_adjacency.c.i: cmake_force
@@ -1526,7 +1513,6 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/check_first_line.c.o" \
 "CMakeFiles/lem_in.dir/put_first_adjacency.c.o" \
 "CMakeFiles/lem_in.dir/ft_make_adjacency.c.o" \
-"CMakeFiles/lem_in.dir/ft_check_format_exit.c.o" \
 "CMakeFiles/lem_in.dir/ft_exit_checking.c.o" \
 "CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o"
 
@@ -1635,12 +1621,11 @@ lem_in: CMakeFiles/lem_in.dir/ft_copy_name.c.o
 lem_in: CMakeFiles/lem_in.dir/check_first_line.c.o
 lem_in: CMakeFiles/lem_in.dir/put_first_adjacency.c.o
 lem_in: CMakeFiles/lem_in.dir/ft_make_adjacency.c.o
-lem_in: CMakeFiles/lem_in.dir/ft_check_format_exit.c.o
 lem_in: CMakeFiles/lem_in.dir/ft_exit_checking.c.o
 lem_in: CMakeFiles/lem_in.dir/ft_exit_adjacency.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hlarson/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

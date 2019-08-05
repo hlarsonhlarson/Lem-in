@@ -15,18 +15,21 @@
 int     ft_exit_adjacency(t_graph **graph)
 {
     int     i;
-    t_graph *tmp;
+    t_adjacency *tmp;
+    t_adjacency *swap;
 
     i = 0;
     while (graph[i])
     {
-        while (graph[i])
+        tmp = graph[i]->adjacency;
+        while (tmp)
         {
-            tmp = graph[i]->adjacency;
-            ft_strdel(&(graph[i]->name));
-            free(graph[i]);
-            graph[i] = tmp;
+            swap = tmp->next;
+            free(tmp);
+            tmp = swap;
         }
+        free(graph[i]->name);
+        free(graph[i]);
         i++;
     }
     free(graph);

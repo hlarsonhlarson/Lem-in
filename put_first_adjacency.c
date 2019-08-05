@@ -39,7 +39,7 @@ static int get_second_link(char *line,  t_graph **graph)
     }
     return (j);
 }
-
+/*
 static t_graph      *copy_inform(t_graph *graph)
 {
     t_graph *tmp;
@@ -53,7 +53,17 @@ static t_graph      *copy_inform(t_graph *graph)
     tmp->ant_number = graph->ant_number;
     tmp->adjacency = NULL;
     return (tmp);
-}
+}*/
+
+t_adjacency  *make_adjacency(int link_num)
+{
+        t_adjacency *adj;
+
+        adj = (t_adjacency *)malloc(sizeof(t_adjacency));
+        adj->node_num = link_num;
+        adj->next = NULL;
+        return (adj);
+};
 
 void        put_first_adjacency(char *line, t_graph **graph)
 {
@@ -69,8 +79,8 @@ void        put_first_adjacency(char *line, t_graph **graph)
     c = ft_strnew(ft_strlen(line) - i);
     c = ft_strcpy(c, line + i + 1);
     second_link = get_second_link(c, graph);
-    (graph[first_link])->adjacency = copy_inform(graph[second_link]);
-    (graph[second_link])->adjacency = copy_inform(graph[first_link]);
+    (graph[first_link])->adjacency = make_adjacency(second_link);
+    (graph[second_link])->adjacency = make_adjacency(first_link);
     ft_strdel(&c);
     ft_strdel(&line);
 }
