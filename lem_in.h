@@ -17,6 +17,14 @@
 # include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
+typedef struct      s_queue
+{
+    int     *elements;
+    int     head;
+    int     tail;
+    int     max_elem;
+}                   t_queue;
+
 
 typedef struct      s_adjacency
 {

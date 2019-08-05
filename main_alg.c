@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 12:26:15 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/05 13:02:57 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/05 13:46:13 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ void		main_alg(t_graph **graph)
 	size_t	end;
 	size_t	len;
 	int		*queue;
+	int		*visited;
 
 	get_graph_param(graph, &start, &end, &len);
-	queue = (int *)malloc(sizeof(int) * len);
-
-
+	visited = (int *)malloc(sizeof(int) * len);
