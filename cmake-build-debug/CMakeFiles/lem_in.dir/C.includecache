@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/hlarson/lem_in/ft_make_adjacency.c
-lem_in.h
-/Users/hlarson/lem_in/lem_in.h
-
 /Users/hlarson/lem_in/ft_printf/ft_includes.h
 
 /Users/hlarson/lem_in/ft_printf/ft_printf.h
@@ -45,4 +41,8 @@ fcntl.h
 -
 get_next_line/get_next_line.h
 /Users/hlarson/lem_in/get_next_line/get_next_line.h
+
+/Users/hlarson/lem_in/main_alg.c
+lem_in.h
+/Users/hlarson/lem_in/lem_in.h
 

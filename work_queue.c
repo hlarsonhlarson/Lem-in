@@ -26,7 +26,7 @@ int		size_queue(t_queue queue)
 
 void	push_queue(t_queue *queue, int x)
 {
-	if (size_queue(*queue) != queue.max_elem)
+	if (size_queue(*queue) != queue->max_elem)
 	{
 		queue->elements[queue->tail] = x;
         queue->tail = (queue->tail + 1) % queue->max_elem;
@@ -39,7 +39,7 @@ int		pop_queue(t_queue *queue)
 
 	if (empty_queue(*queue))
 		return (-1);
-	x = queue.elements[queue->head];
+	x = queue->elements[queue->head];
 	queue->head = (queue->head + 1) % queue->max_elem;
 	return (x);
 }
@@ -52,6 +52,6 @@ t_queue	*init_queue(int size)
 	queue->elements = (int *)ft_memalloc(sizeof(int) * size);
 	queue->max_elem = size;
 	queue->head = 0;
-	queue->tail = 0;
+	queue->tail = 1;
 	return (queue);
 }

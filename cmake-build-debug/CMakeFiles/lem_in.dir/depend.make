@@ -361,10 +361,24 @@ CMakeFiles/lem_in.dir/main.c.o: ../get_next_line/libft/libft.h
 CMakeFiles/lem_in.dir/main.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/main.c.o: ../main.c
 
+CMakeFiles/lem_in.dir/main_alg.c.o: ../ft_printf/ft_includes.h
+CMakeFiles/lem_in.dir/main_alg.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/main_alg.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/main_alg.c.o: ../get_next_line/libft/libft.h
+CMakeFiles/lem_in.dir/main_alg.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/main_alg.c.o: ../main_alg.c
+
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../ft_printf/ft_includes.h
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../ft_printf/ft_printf.h
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../get_next_line/get_next_line.h
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../get_next_line/libft/libft.h
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/put_first_adjacency.c.o: ../put_first_adjacency.c
+
+CMakeFiles/lem_in.dir/work_queue.c.o: ../ft_printf/ft_includes.h
+CMakeFiles/lem_in.dir/work_queue.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/work_queue.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/work_queue.c.o: ../get_next_line/libft/libft.h
+CMakeFiles/lem_in.dir/work_queue.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/work_queue.c.o: ../work_queue.c
 

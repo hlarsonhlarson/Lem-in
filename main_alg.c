@@ -12,20 +12,20 @@
 
 #include "lem_in.h"
 
-void		get_graph_len(t_graph **graph, size_t *start, size_t *end, size_t *len)
+void		get_graph_param(t_graph **graph, size_t *start, size_t *end, size_t *len)
 {
 	*len = 0;
 	while (graph[*len])
 	{
-		if (graph[*len]->start == 1)
-			*start_num = *len;
+		if ((graph[*len])->start == 1)
+			*start = *len;
 		if (graph[*len]->end == 1)
-			*end_num = *len;
-		*len++;
+			*end = *len;
+		*len = *len + 1;
 	}
 }
 
-int			*get_path(t_queue *queue, t_graph *graph, int start, int end)
+int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 {
 	int		*visited;
 	int		*parent;
@@ -39,29 +39,31 @@ int			*get_path(t_queue *queue, t_graph *graph, int start, int end)
 	{
 		node_num = pop_queue(queue);
 		if (node_num == end)
-			return (parent);
-		adjacency = graph[i].adjacency;
+        {
+		    free(visited);
+		    return (parent);
+        }
+		adjacency = graph[node_num]->adjacency;
 		while (adjacency)
 		{
-			adjacency = adjacency->next;
-			if (visited[adjacency->name] == 0)
+			if (visited[adjacency->node_num] == 0)
 			{
-				parent[adjacnecy->name] = node_num;
-				queue_push(queue, adjacency->node_num);
+				parent[adjacency->node_num] = node_num;
+				push_queue(queue, adjacency->node_num);
 			}
+            adjacency = adjacency->next;
 		}
 		visited[node_num] = 1;
 	}
+	free(visited);
 	return (NULL);
 }
 
-void		print_way(int *path, t_graph *graph, int u)
+void		print_way(int *path, t_graph **graph, int u)
 {
 	if (path[u] != u)
-	{
-		print_way(p[u]);
-	}
-	ft_printf("%s\n", grap[u].name);
+		print_way(path, graph, path[u]);
+	ft_printf("%s\n", graph[u]->name);
 }
 
 void		main_alg(t_graph **graph)
@@ -73,8 +75,13 @@ void		main_alg(t_graph **graph)
 	int		*path;
 
 	get_graph_param(graph, &start, &end, &len);
-	queue = init_queue(start);
-	pop_queue((int)start);
-	path = get_path(queue, *graph);
+	queue = init_queue(len);
+	push_queue(queue, (int)start);
+	path = get_path(queue, graph, start, end);
+	if (path == NULL)
+	    return ;
 	print_way(path, graph, (int)end);
+	free(path);
+	free(queue->elements);
+	free(queue);
 }

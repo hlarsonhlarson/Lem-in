@@ -71,5 +71,11 @@ int                 ft_exit_adjacency_norm(char *c, char *line);
 int                 ft_exit_adjacency_error(char *c, char *line, t_graph **graph);
 int                 ft_exit_adjacency_error_two(char *line, t_graph **graph);
 t_adjacency         *make_adjacency(int link_num);
+int                 empty_queue(t_queue queue);
+int                 size_queue(t_queue queue);
+void                push_queue(t_queue *queue, int x);
+int                 pop_queue(t_queue *queue);
+t_queue             *init_queue(int size);
+void		        main_alg(t_graph **graph);
 
 #endif
