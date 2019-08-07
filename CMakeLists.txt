@@ -119,4 +119,6 @@ add_executable(lem_in
         put_first_adjacency.c
         ft_make_adjacency.c
         ft_exit_checking.c
-        ft_exit_adjacency.c)
+        ft_exit_adjacency.c
+        work_queue.c
+        main_alg.c)

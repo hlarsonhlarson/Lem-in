@@ -2904,6 +2904,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main.c.s
 .PHONY : main.c.s
 
+main_alg.o: main_alg.c.o
+
+.PHONY : main_alg.o
+
+# target to build an object file
+main_alg.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main_alg.c.o
+.PHONY : main_alg.c.o
+
+main_alg.i: main_alg.c.i
+
+.PHONY : main_alg.i
+
+# target to preprocess a source file
+main_alg.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main_alg.c.i
+.PHONY : main_alg.c.i
+
+main_alg.s: main_alg.c.s
+
+.PHONY : main_alg.s
+
+# target to generate assembly for a file
+main_alg.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/main_alg.c.s
+.PHONY : main_alg.c.s
+
 put_first_adjacency.o: put_first_adjacency.c.o
 
 .PHONY : put_first_adjacency.o
@@ -2930,6 +2957,33 @@ put_first_adjacency.s: put_first_adjacency.c.s
 put_first_adjacency.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/put_first_adjacency.c.s
 .PHONY : put_first_adjacency.c.s
+
+work_queue.o: work_queue.c.o
+
+.PHONY : work_queue.o
+
+# target to build an object file
+work_queue.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_queue.c.o
+.PHONY : work_queue.c.o
+
+work_queue.i: work_queue.c.i
+
+.PHONY : work_queue.i
+
+# target to preprocess a source file
+work_queue.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_queue.c.i
+.PHONY : work_queue.c.i
+
+work_queue.s: work_queue.c.s
+
+.PHONY : work_queue.s
+
+# target to generate assembly for a file
+work_queue.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_queue.c.s
+.PHONY : work_queue.c.s
 
 # Help Target
 help:
@@ -3249,9 +3303,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_alg.o"
+	@echo "... main_alg.i"
+	@echo "... main_alg.s"
 	@echo "... put_first_adjacency.o"
 	@echo "... put_first_adjacency.i"
 	@echo "... put_first_adjacency.s"
+	@echo "... work_queue.o"
+	@echo "... work_queue.i"
+	@echo "... work_queue.s"
 .PHONY : help
 
 
