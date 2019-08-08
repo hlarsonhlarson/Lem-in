@@ -52,6 +52,6 @@ t_queue	*init_queue(int size)
 	queue->elements = (int *)ft_memalloc(sizeof(int) * size);
 	queue->max_elem = size;
 	queue->head = 0;
-	queue->tail = 1;
+	queue->tail = 0;
 	return (queue);
 }

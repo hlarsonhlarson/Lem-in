@@ -33,8 +33,8 @@ int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 	t_adjacency	*adjacency;
 
 	visited = (int *)ft_memalloc(sizeof(int) * queue->max_elem);
-	visited[start] = 1;
 	parent = (int *)ft_memalloc(sizeof(int) * queue->max_elem);
+	parent[start] = start;
 	while (!empty_queue(*queue))
 	{
 		node_num = pop_queue(queue);
@@ -43,17 +43,18 @@ int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 		    free(visited);
 		    return (parent);
         }
-		adjacency = graph[node_num]->adjacency;
+        visited[node_num] = 1;
+	    adjacency = graph[node_num]->adjacency;
 		while (adjacency)
 		{
 			if (visited[adjacency->node_num] == 0)
 			{
 				parent[adjacency->node_num] = node_num;
+				visited[adjacency->node_num] = 1;
 				push_queue(queue, adjacency->node_num);
 			}
             adjacency = adjacency->next;
 		}
-		visited[node_num] = 1;
 	}
 	free(visited);
 	return (NULL);
