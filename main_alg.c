@@ -25,6 +25,12 @@ void		get_graph_param(t_graph **graph, size_t *start, size_t *end, size_t *len)
 	}
 }
 
+static int  *norm_exit(int *parent, int **visited)
+{
+    free(*visited);
+    return (parent);
+}
+
 int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 {
 	int		*visited;
@@ -39,10 +45,7 @@ int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 	{
 		node_num = pop_queue(queue);
 		if (node_num == end)
-        {
-		    free(visited);
-		    return (parent);
-        }
+            return (norm_exit(parent, &visited));
         visited[node_num] = 1;
 	    adjacency = graph[node_num]->adjacency;
 		while (adjacency)
