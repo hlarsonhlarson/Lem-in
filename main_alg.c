@@ -6,7 +6,7 @@
 /*   By: hlarson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 12:26:15 by hlarson           #+#    #+#             */
-/*   Updated: 2019/08/07 16:55:22 by hlarson          ###   ########.fr       */
+/*   Updated: 2019/08/08 19:29:32 by hlarson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void		get_graph_param(t_graph **graph, size_t *start, size_t *end, size_t *len)
 
 static int  *norm_exit(int *parent, int **visited)
 {
-    free(*visited);
-    return (parent);
+	free(*visited);
+	return (parent);
 }
 
 int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
@@ -45,9 +45,9 @@ int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 	{
 		node_num = pop_queue(queue);
 		if (node_num == end)
-            return (norm_exit(parent, &visited));
-        visited[node_num] = 1;
-	    adjacency = graph[node_num]->adjacency;
+			return (norm_exit(parent, &visited));
+		visited[node_num] = 1;
+		adjacency = graph[node_num]->adjacency;
 		while (adjacency)
 		{
 			if (visited[adjacency->node_num] == 0)
@@ -56,18 +56,106 @@ int			*get_path(t_queue *queue, t_graph **graph, int start, int end)
 				visited[adjacency->node_num] = 1;
 				push_queue(queue, adjacency->node_num);
 			}
-            adjacency = adjacency->next;
+			adjacency = adjacency->next;
 		}
 	}
 	free(visited);
 	return (NULL);
 }
 
-void		print_way(int *path, t_graph **graph, int u)
+t_adjacency		*get_way(int *path, int u)
 {
-	if (path[u] != u)
-		print_way(path, graph, path[u]);
-	ft_printf("%s\n", graph[u]->name);
+	t_adjacency	*adj;
+	t_adjacency	*tmp;
+
+	adj = (t_adjacency *)malloc(sizeof(t_adjacency));
+	adj->node_num = u;
+	adj->next = NULL;
+	tmp = adj->next;
+	u = path[u];
+	while (u != path[u])
+	{
+		tmp = (t_adjacency *)malloc(sizeof(t_adjacency));
+		tmp->node_num = u;
+		tmp = tmp->next;
+		u = path[u];
+	}
+	return (adj);
+}
+
+size_t      count_path(t_graph **graph, size_t start)
+{
+	t_adjacency *adjacency;
+	size_t      counter;
+
+	counter = 0;
+	adjacency = graph[start]->adjacency;
+	while (adjacency)
+	{
+		adjacency = adjacency->next;
+		counter++;
+	}
+	return (counter);
+}
+
+void		ft_del_path(t_adjacency **head_path)
+{
+	t_adjacency	*tmp;
+	t_adjacency	*swap;
+		
+	tmp = *head_path;
+	while (tmp)
+	{
+		swap = tmp->next;
+		free(tmp);
+		tmp = swap;
+	}
+}
+
+void        recreate_graph(t_graph **graph, int *path_num, int start, int end)
+{
+	t_adjacency	*path;
+	t_adjacency	*tmp_graph;
+	t_adjacency	*head_path;
+
+	path = get_way(path_num, end);
+	head_path = path;
+	while (path)
+	{
+		tmp_graph = graph[path->node_num]->adjacency;
+		while (tmp_graph)
+		{
+			tmp_graph->node_num = start;
+			tmp_graph = tmp_graph->next;
+		}
+		path = path->next;
+	}
+	ft_del_path(&head_path);
+}
+
+void        help_fun(t_graph **graph, size_t start, size_t end, size_t len)
+{
+	t_queue *queue;
+	int     **path;
+	size_t  path_num;
+
+	queue = init_queue(len);
+	push_queue(queue, (int)start);
+	path_num = count_path(graph, start);
+	path = (int **)malloc(sizeof(int) * (int)path_num);
+	while (path_num != 0)
+	{
+		path[path_num] = get_path(queue, graph, start, end);
+        recreate_graph(graph, path[path_num], start, end);
+		path_num--;
+	}
+	//print_way(path, graph, (int)end);
+	if (path == NULL)
+		return ;
+	free(path);
+	free(queue->elements);
+	free(queue);
+
 }
 
 void		main_alg(t_graph **graph)
@@ -75,17 +163,7 @@ void		main_alg(t_graph **graph)
 	size_t	start;
 	size_t	end;
 	size_t	len;
-	t_queue	*queue;
-	int		*path;
 
 	get_graph_param(graph, &start, &end, &len);
-	queue = init_queue(len);
-	push_queue(queue, (int)start);
-	path = get_path(queue, graph, start, end);
-	if (path == NULL)
-	    return ;
-	print_way(path, graph, (int)end);
-	free(path);
-	free(queue->elements);
-	free(queue);
+	help_fun(graph, start, end, len);
 }
