@@ -71,16 +71,21 @@ t_adjacency		*get_way(int *path, int u)
 	adj = (t_adjacency *)malloc(sizeof(t_adjacency));
 	adj->node_num = u;
 	adj->next = NULL;
-	tmp = adj->next;
+	tmp = adj;
+	//tmp = adj->next;
 	u = path[u];
 	while (u != path[u])
 	{
-		tmp = (t_adjacency *)malloc(sizeof(t_adjacency));
-		tmp->node_num = u;
-		tmp = tmp->next;
+		adj->next = (t_adjacency *)malloc(sizeof(t_adjacency));
+		adj->next->node_num = u;
+		adj->next->next = NULL;
+		adj = adj->next;
 		u = path[u];
 	}
-	return (adj);
+    adj->next = (t_adjacency *)malloc(sizeof(t_adjacency));
+    adj->next->node_num = u;
+    adj->next->next = NULL;
+	return (tmp);
 }
 
 size_t      count_path(t_graph **graph, size_t start)
@@ -95,6 +100,7 @@ size_t      count_path(t_graph **graph, size_t start)
 		adjacency = adjacency->next;
 		counter++;
 	}
+	counter--;
 	return (counter);
 }
 
@@ -122,36 +128,55 @@ void        recreate_graph(t_graph **graph, int *path_num, int start, int end)
 	head_path = path;
 	while (path)
 	{
-		tmp_graph = graph[path->node_num]->adjacency;
+	    if (path->next == NULL)
+        {
+	        ft_del_path(&head_path);
+	        return ;
+        }
+	   	tmp_graph = graph[path->next->node_num]->adjacency;
 		while (tmp_graph)
 		{
-			tmp_graph->node_num = start;
+		    if (tmp_graph->node_num == path->node_num)
+		        tmp_graph->node_num = start;
 			tmp_graph = tmp_graph->next;
 		}
 		path = path->next;
 	}
-	ft_del_path(&head_path);
+}
+
+void        print_way(int *path, int u, t_graph **graph)
+{
+    if (path[u] != u)
+        print_way(path, path[u], graph);
+    ft_printf("%s\n", graph[u]->name);
 }
 
 void        help_fun(t_graph **graph, size_t start, size_t end, size_t len)
 {
 	t_queue *queue;
 	int     **path;
-	size_t  path_num;
+    int  path_num;
 
 	queue = init_queue(len);
 	push_queue(queue, (int)start);
 	path_num = count_path(graph, start);
 	path = (int **)malloc(sizeof(int) * (int)path_num);
-	while (path_num != 0)
+	while (path_num != -1)
 	{
 		path[path_num] = get_path(queue, graph, start, end);
         recreate_graph(graph, path[path_num], start, end);
+        free(queue->elements);
+        free(queue);
+        queue = init_queue(len);
+        push_queue(queue, (int)start);
 		path_num--;
 	}
 	//print_way(path, graph, (int)end);
 	if (path == NULL)
 		return ;
+	print_way(path[0], end, graph);
+	ft_printf("HI\n");
+    print_way(path[1], end, graph);
 	free(path);
 	free(queue->elements);
 	free(queue);
