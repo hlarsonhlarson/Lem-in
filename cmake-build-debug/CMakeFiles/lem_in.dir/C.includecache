@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/alexander/lem_in/ft_printf/ft_includes.h
+/Users/hlarson/lem_in/ft_printf/ft_includes.h
 
-/home/alexander/lem_in/ft_printf/ft_printf.h
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
 unistd.h
 -
 stdlib.h
@@ -20,31 +20,35 @@ stdarg.h
 stdint.h
 -
 ft_includes.h
-/home/alexander/lem_in/ft_printf/ft_includes.h
+/Users/hlarson/lem_in/ft_printf/ft_includes.h
 
-/home/alexander/lem_in/get_next_line/get_next_line.h
+/Users/hlarson/lem_in/get_next_line/get_next_line.h
 libft/libft.h
-/home/alexander/lem_in/get_next_line/libft/libft.h
+/Users/hlarson/lem_in/get_next_line/libft/libft.h
 ../ft_printf/ft_printf.h
-/home/alexander/lem_in/ft_printf/ft_printf.h
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
 
-/home/alexander/lem_in/get_next_line/libft/libft.h
+/Users/hlarson/lem_in/get_next_line/libft/libft.h
 string.h
 -
 
-/home/alexander/lem_in/lem_in.h
+/Users/hlarson/lem_in/lem_in.h
 ft_printf/ft_printf.h
-/home/alexander/lem_in/ft_printf/ft_printf.h
+/Users/hlarson/lem_in/ft_printf/ft_printf.h
 stdbool.h
 -
 fcntl.h
 -
 get_next_line/get_next_line.h
-/home/alexander/lem_in/get_next_line/get_next_line.h
+/Users/hlarson/lem_in/get_next_line/get_next_line.h
 
-/home/alexander/lem_in/main_alg.c
+/Users/hlarson/lem_in/main_alg.c
 lem_in.h
+<<<<<<< HEAD
 /home/alexander/lem_in/lem_in.h
 stdio.h
 -
+=======
+/Users/hlarson/lem_in/lem_in.h
+>>>>>>> 7f752c4d536e73b4a9dd8d16d44ee5431a554ccc
 
