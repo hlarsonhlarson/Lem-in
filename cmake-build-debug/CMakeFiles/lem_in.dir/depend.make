@@ -382,3 +382,10 @@ CMakeFiles/lem_in.dir/work_queue.c.o: ../get_next_line/libft/libft.h
 CMakeFiles/lem_in.dir/work_queue.c.o: ../lem_in.h
 CMakeFiles/lem_in.dir/work_queue.c.o: ../work_queue.c
 
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../ft_printf/ft_includes.h
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../ft_printf/ft_printf.h
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../get_next_line/get_next_line.h
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../get_next_line/libft/libft.h
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../lem_in.h
+CMakeFiles/lem_in.dir/work_with_path.c.o: ../work_with_path.c
+

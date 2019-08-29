@@ -2985,6 +2985,33 @@ work_queue.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_queue.c.s
 .PHONY : work_queue.c.s
 
+work_with_path.o: work_with_path.c.o
+
+.PHONY : work_with_path.o
+
+# target to build an object file
+work_with_path.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_with_path.c.o
+.PHONY : work_with_path.c.o
+
+work_with_path.i: work_with_path.c.i
+
+.PHONY : work_with_path.i
+
+# target to preprocess a source file
+work_with_path.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_with_path.c.i
+.PHONY : work_with_path.c.i
+
+work_with_path.s: work_with_path.c.s
+
+.PHONY : work_with_path.s
+
+# target to generate assembly for a file
+work_with_path.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/work_with_path.c.s
+.PHONY : work_with_path.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3312,6 +3339,9 @@ help:
 	@echo "... work_queue.o"
 	@echo "... work_queue.i"
 	@echo "... work_queue.s"
+	@echo "... work_with_path.o"
+	@echo "... work_with_path.i"
+	@echo "... work_with_path.s"
 .PHONY : help
 
 

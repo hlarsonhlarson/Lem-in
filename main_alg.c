@@ -221,7 +221,8 @@ void		main_alg(t_graph **graph)
 	path = NULL;
 	get_graph_param(graph, &organizer);
 	help_fun(graph, &organizer, &path);
-	while (path)
+	work_with_path(path, &organizer);
+/*	while (path)
 	{
 		t_adjacency *tmp;
 
@@ -232,5 +233,5 @@ void		main_alg(t_graph **graph)
 			tmp = tmp->next;
 		}
 		path = path->next;
-	}
+	}*/
 }

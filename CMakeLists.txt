@@ -121,4 +121,5 @@ add_executable(lem_in
         ft_exit_checking.c
         ft_exit_adjacency.c
         work_queue.c
-        main_alg.c)
+        main_alg.c
+        work_with_path.c)

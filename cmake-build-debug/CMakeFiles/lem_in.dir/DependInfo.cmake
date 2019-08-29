@@ -110,6 +110,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/hlarson/lem_in_p/main_alg.c" "/Users/hlarson/lem_in_p/cmake-build-debug/CMakeFiles/lem_in.dir/main_alg.c.o"
   "/Users/hlarson/lem_in_p/put_first_adjacency.c" "/Users/hlarson/lem_in_p/cmake-build-debug/CMakeFiles/lem_in.dir/put_first_adjacency.c.o"
   "/Users/hlarson/lem_in_p/work_queue.c" "/Users/hlarson/lem_in_p/cmake-build-debug/CMakeFiles/lem_in.dir/work_queue.c.o"
+  "/Users/hlarson/lem_in_p/work_with_path.c" "/Users/hlarson/lem_in_p/cmake-build-debug/CMakeFiles/lem_in.dir/work_with_path.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

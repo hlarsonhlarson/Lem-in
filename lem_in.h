@@ -91,5 +91,6 @@ void                push_queue(t_queue *queue, int x);
 int                 pop_queue(t_queue *queue);
 t_queue             *init_queue(int size);
 void		        main_alg(t_graph **graph);
+void                work_with_path(t_path *path, t_organizer *organizer);
 
 #endif

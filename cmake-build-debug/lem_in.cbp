@@ -426,6 +426,9 @@
 		<Unit filename="/Users/hlarson/lem_in_p/work_queue.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/hlarson/lem_in_p/work_with_path.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/hlarson/lem_in_p/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
