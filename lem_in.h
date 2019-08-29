@@ -17,13 +17,6 @@
 # include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
-typedef struct		s_path
-{
-	int	*path;
-	int	path_len;
-	struct s_path	*next;
-}			t_path;
-
 typedef struct      s_queue
 {
     int     *elements;
@@ -38,6 +31,13 @@ typedef struct      s_adjacency
     int                 node_num;
     struct s_adjacency  *next;
 }                   t_adjacency;
+
+typedef struct		s_path
+{
+    t_adjacency	*path;
+    int	path_len;
+    struct s_path	*next;
+}			t_path;
 
 typedef struct		s_graph
 {

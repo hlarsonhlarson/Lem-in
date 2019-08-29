@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/hlarson/lem_in/. -I/Users/hlarson/lem_in/ft_printf -I/Users/hlarson/lem_in/get_next_line -I/Users/hlarson/lem_in/get_next_line/libft -I/Users/hlarson/lem_in/get_next_line/libft/Includes 
+C_INCLUDES = -I/Users/hlarson/lem_in_p/. -I/Users/hlarson/lem_in_p/ft_printf -I/Users/hlarson/lem_in_p/get_next_line -I/Users/hlarson/lem_in_p/get_next_line/libft -I/Users/hlarson/lem_in_p/get_next_line/libft/Includes 
 
