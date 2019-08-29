@@ -17,6 +17,13 @@
 # include <fcntl.h>
 # include "get_next_line/get_next_line.h"
 
+typedef struct		s_path
+{
+	int	*path;
+	int	path_len;
+	struct s_path	*next;
+}			t_path;
+
 typedef struct      s_queue
 {
     int     *elements;
@@ -52,6 +59,13 @@ typedef struct		s_help
 	int				x;
 	int				y;
 }					t_help;
+
+typedef struct		s_organizer
+{
+	int	start;
+	int	len;
+	int	end;
+}			t_organizer;
 
 int					ft_check_comment(char *line, t_help **help, int *start, int *end);
 int                 ft_check_comment_ant(char *line);
